@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Photography Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Photographer</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="fade-in">Portfolio</h1>
+                <p class="fade-in">A collection of my best work</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-buttons fade-in">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="portrait">Portrait</button>
+                    <button class="filter-btn" data-filter="landscape">Landscape</button>
+                    <button class="filter-btn" data-filter="street">Street</button>
+                    <button class="filter-btn" data-filter="wedding">Wedding</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-in" data-category="portrait">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=600" alt="Portrait 1">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Portrait</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="landscape">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Landscape 1">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Mountain Vista</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="street">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600" alt="Street 1">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Street Life</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="wedding">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600" alt="Wedding 1">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Wedding</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="portrait">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Portrait 2">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Portrait</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="landscape">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600" alt="Landscape 2">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Sunset</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="street">
+                        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600" alt="Street 2">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Urban</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="wedding">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600" alt="Wedding 2">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Wedding</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="portrait">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600" alt="Portrait 3">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Portrait</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="landscape">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Landscape 3">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Forest</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="street">
+                        <img src="https://images.unsplash.com/photo-1535083783855-9e06c21c2bc4?w=600" alt="Street 3">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Street</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in" data-category="wedding">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600" alt="Wedding 3">
+                        <div class="overlay" onclick="openLightbox(this)">
+                            <h3>Wedding</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Photography Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Email">✉️</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter gallery items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

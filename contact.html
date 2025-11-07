@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Photography Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Photographer</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <h1 class="fade-in">Get In Touch</h1>
+                <p class="fade-in contact-intro">Let's discuss your next photography project. I'd love to hear from you!</p>
+
+                <div class="contact-content">
+                    <div class="contact-info fade-in">
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div>
+                                <h3>Location</h3>
+                                <p>123 Photography Street<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>hello@photographer.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🕒</div>
+                            <div>
+                                <h3>Working Hours</h3>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form fade-in">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="wedding">Wedding Photography</option>
+                                    <option value="portrait">Portrait Session</option>
+                                    <option value="commercial">Commercial Photography</option>
+                                    <option value="event">Event Coverage</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="service-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            <button type="submit" class="btn-primary">Send Message</button>
+                            <div class="form-status" id="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Photography Portfolio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Email">✉️</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('form-status');
+
+        function validateForm() {
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const service = document.getElementById('service');
+            const message = document.getElementById('message');
+
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(msg => msg.textContent = '');
+
+            // Validate name
+            if (name.value.trim().length < 2) {
+                document.getElementById('name-error').textContent = 'Name must be at least 2 characters';
+                isValid = false;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email';
+                isValid = false;
+            }
+
+            // Validate service
+            if (!service.value) {
+                document.getElementById('service-error').textContent = 'Please select a service';
+                isValid = false;
+            }
+
+            // Validate message
+            if (message.value.trim().length < 10) {
+                document.getElementById('message-error').textContent = 'Message must be at least 10 characters';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (validateForm()) {
+                formStatus.textContent = 'Sending your message...';
+                formStatus.className = 'form-status sending';
+
+                // Simulate form submission
+                setTimeout(() => {
+                    formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+                    formStatus.className = 'form-status success';
+                    contactForm.reset();
+                }, 2000);
+            } else {
+                formStatus.textContent = 'Please fix the errors above.';
+                formStatus.className = 'form-status error';
+            }
+        });
+
+        // Real-time validation
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required')) {
+                    const errorElement = document.getElementById(this.id + '-error');
+                    if (errorElement) {
+                        if (!this.value.trim()) {
+                            errorElement.textContent = 'This field is required';
+                        } else if (this.type === 'email') {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(this.value)) {
+                                errorElement.textContent = 'Please enter a valid email';
+                            }
+                        } else if (this.id === 'name' && this.value.trim().length < 2) {
+                            errorElement.textContent = 'Name must be at least 2 characters';
+                        } else if (this.id === 'message' && this.value.trim().length < 10) {
+                            errorElement.textContent = 'Message must be at least 10 characters';
+                        } else {
+                            errorElement.textContent = '';
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
